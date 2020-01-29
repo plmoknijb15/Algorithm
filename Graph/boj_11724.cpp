@@ -1,3 +1,5 @@
+// 연결 요소의 계수
+
 #include <iostream>
 #include <vector>
 
