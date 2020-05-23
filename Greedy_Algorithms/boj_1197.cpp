@@ -20,7 +20,7 @@ int Find(int node)
 {
     if (node == parent[node])
         return node;
-    
+
     return parent[node] = Find(parent[node]);
 }
 
@@ -40,7 +40,7 @@ void Union(int node1, int node2, int weight)
     result += weight;
 }
 
-int main() 
+int main()
 {
     int v, e;
     cin >> v >> e;
@@ -51,17 +51,17 @@ int main()
     for (int i = 0; i < e; i++)
     {
         int node1, node2, weight;
-        scanf("%d %d %d", &node1, &node2, &weight);    
+        scanf("%d %d %d", &node1, &node2, &weight);
 
         g.push_back(make_pair(make_pair(node1, node2), weight));
     }
-    
+
     sort(g.begin(), g.end(), compare);
 
     for (int i = 0; i < e; i++)
         Union(g[i].first.first, g[i].first.second, g[i].second);
-    
+
     cout << result << endl;
-    
+
     return 0;
 }
